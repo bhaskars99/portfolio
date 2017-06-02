@@ -163,7 +163,10 @@
 
                 // Set the message text.
                 if (data.responseText !== '') {
-                    $(formMessages).text(data.responseText);
+                    if((data.responseText.indexOf("Cannot POST /contact.php")!=-1) ||(data.responseText.indexOf("405")!=-1) ||(data.responseText.indexOf("404")!=-1))
+                        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                    else
+                        $(formMessages).text(data.responseText);
                 } else {
                     $(formMessages).text('Oops! An error occured and your message could not be sent.');
                 }
