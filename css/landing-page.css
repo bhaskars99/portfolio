@@ -513,7 +513,7 @@ a.personi-btn:focus {
     display: inline-block;
     font-size: 15px;
     font-weight: 300;
-    text-transform: uppercase;
+    1text-transform: uppercase;
     margin: 0;
 }
 .progress-skill {

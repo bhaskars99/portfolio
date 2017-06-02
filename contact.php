@@ -4,7 +4,7 @@ $name=$_POST['name'];
 $email_from=$_POST['email'];
 $phone=$_POST['phone'];
 $message=$_POST['message'];
-$email_to='contactme@bhaskarsettipalli.com';
+$email_to='contact@bhaskarsettipalli.com';
     $email_subject='Message from bhaskarsettipalli.com website';
     
      $email_message = "Hello Bhaskar! Here's a message from ".$name;
@@ -34,7 +34,9 @@ $email_message .="\n\nCheers,\nbhaskarsettipalli.com";
 
 mail($email_to, $email_subject, $email_message); 
 
+header("Location: index.html");
 
-echo "Thank you for contacting me. I will be in touch with you very soon.";
+        exit;
+//echo "Thank you for contacting me. I will be in touch with you very soon.";
 ?>
 
