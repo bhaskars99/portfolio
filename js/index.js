@@ -163,9 +163,12 @@
 
                 // Set the message text.
                 if (data.responseText !== '') {
-                    alert((data.responseText.indexOf("Cannot POST /contact.php")!=-1) ||(data.responseText.indexOf("405")!=-1) ||(data.responseText.indexOf("404")!=-1))
+                    //alert((data.responseText.indexOf("Cannot POST /contact.php")!=-1) ||(data.responseText.indexOf("405")!=-1) ||(data.responseText.indexOf("404")!=-1))
                     if((data.responseText.indexOf("Cannot POST /contact.php")!=-1) ||(data.responseText.indexOf("405")!=-1) ||(data.responseText.indexOf("404")!=-1))
-                        $(formMessages).text('Oops! An error occured and your message could not be sent.');
+                        $(formMessages).text('Oops! An error occured and your message could not be sent. Please reach me at my email.');
+                        $('#name').val('');
+                        $('#email').val('');
+                        $('#message').val('');
                     else
                         $(formMessages).text(data.responseText);
                 } else {
