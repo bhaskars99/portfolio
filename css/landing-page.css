@@ -735,13 +735,15 @@ button.sent-button[type="submit"] {
     padding-left: 90px;
     position: relative;
     font-weight: 500;
-    word-break: break-all;
 }
 .address-content-table-cell span {
     font-size: 16px;
     left: 0;
     position: absolute;
     text-transform: uppercase;
+}
+.address-content-table-cell li a.myWebsite {
+    word-break: break-all;
 }
 @media only screen and (max-width: 767px) {
     .contact-form,
