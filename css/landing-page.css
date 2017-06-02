@@ -416,7 +416,7 @@ a.personi-btn:focus {
     font-weight: 600;
 }
 .signature.about-signature {
-    bottom: 70px;
+    bottom: -60px;
     font-size: 30px;
     right: 40px;
 }
@@ -430,7 +430,7 @@ a.personi-btn:focus {
         text-align: center;
     }
     .signature.about-signature {
-        bottom: 70px;
+        bottom: -60px;
         left: 0;
         right: 0;
     }
@@ -446,7 +446,7 @@ a.personi-btn:focus {
         text-align: center;
     }
     .signature.about-signature {
-        bottom: 60px;
+        bottom: -60px;
         left: 0;
         right: 0;
     }
