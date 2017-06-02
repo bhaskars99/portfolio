@@ -374,27 +374,29 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-7 col-md-6 col-lg-6 text-left">
+                        <div id="form-messages"></div>
                         <form name="sentMessage" id="contactForm" action="contact.php" method="post" novalidate="">
-                        <div class="contact-form">
-                            <div class="contact-content">
-                                <h3>name *</h3>
-                                <input name="name" required="" type="text">
+                            <div class="contact-form">
+                                <div class="contact-content">
+                                    <h3>name *</h3>
+                                    <input name="name" id="name" required="" type="text">
+                                </div>
+                                <div class="contact-content">
+                                    <h3>email *</h3>
+                                    <input name="email" id="email" required="" type="email">
+                                </div>
+                               <!-- <div class="contact-content">
+                                    <h3>Phone *</h3>
+                                    <input name="phone" id="phone" required="" type="phone">
+                                </div>-->
+                                <div class="contact-content">
+                                    <h3>your query *</h3>
+                                    <textarea data-gramm="true" id="message" spellcheck="true" data-gramm_editor="true" name="message" required=""></textarea>
+                                </div>
+                                <button id="formSubmit" type="submit" class="sent-button hvr-shutter-out-horizontal contact-sub light-button wow fadeInDown">submit <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button>
                             </div>
-                            <div class="contact-content">
-                                <h3>email *</h3>
-                                <input name="email" required="" type="email">
-                            </div>
-                            <div class="contact-content">
-                                <h3>Phone *</h3>
-                                <input name="phone" required="" type="phone">
-                            </div>
-                            <div class="contact-content">
-                                <h3>your query *</h3>
-                                <textarea data-gramm="true" spellcheck="false" data-gramm_editor="true" name="message" required=""></textarea>
-                            </div>
-                            <button type="submit" class="sent-button hvr-shutter-out-horizontal contact-sub light-button wow fadeInDown">submit <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button>
-                        </div>
                         </form>
+                        
                     </div>
                     <div class="col-sm-5 col-md-6 col-lg-6">
                         <div class="address-content-table">

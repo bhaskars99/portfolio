@@ -1,42 +1,51 @@
 <?php
 
-$name=$_POST['name'];
-$email_from=$_POST['email'];
-$phone=$_POST['phone'];
-$message=$_POST['message'];
-$email_to='contact@bhaskarsettipalli.com';
-    $email_subject='Message from bhaskarsettipalli.com website';
-    
-     $email_message = "Hello Bhaskar! Here's a message from ".$name;
- 
-     
- 
-    function clean_string($string) {
- 
-      $bad = array("content-type","bcc:","to:","cc:","href");
- 
-      return str_replace($bad,"",$string);
- 
+    // Only process POST reqeusts.
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Get the form fields and remove whitespace.
+        $name = strip_tags(trim($_POST["name"]));
+				$name = str_replace(array("\r","\n"),array(" "," "),$name);
+        $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $message = trim($_POST["message"]);
+
+        // Check that data was sent to the mailer.
+        if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            // Set a 400 (bad request) response code and exit.
+            http_response_code(400);
+            echo "Oops! There was a problem with your submission. Please complete the form and try again.";
+            exit;
+        }
+
+        // Set the recipient email address.
+        // FIXME: Update this to your desired email address.
+        $recipient = "contact@bhaskarsettipalli.com";
+
+        // Set the email subject.
+        $subject = "New contact from $name";
+
+        // Build the email content.
+        $email_content = "Name: $name\n";
+        $email_content .= "Email: $email\n\n";
+        $email_content .= "Message:\n$message\n";
+
+        // Build the email headers.
+        $email_headers = "From: $name <$email>";
+
+        // Send the email.
+        if (mail($recipient, $subject, $email_content, $email_headers)) {
+            // Set a 200 (okay) response code.
+            http_response_code(200);
+            echo "Thank You! Your message has been sent.";
+        } else {
+            // Set a 500 (internal server error) response code.
+            http_response_code(500);
+            echo "Oops! Something went wrong and we couldn't send your message.";
+        }
+
+    } else {
+        // Not a POST request, set a 403 (forbidden) response code.
+        http_response_code(403);
+        echo "There was a problem with your submission, please try again.";
     }
-$email_message .= "\n\n";
- $email_message .= "Name: ".clean_string($name)."\n";
- 
-   
- 
-    $email_message .= "Email: ".clean_string($email_from)."\n";
- 
-    $email_message .= "Telephone: ".clean_string($phone)."\n";
- 
-    $email_message .= "Message: ".clean_string($message)."\n";
 
-$email_message .="\n\nCheers,\nbhaskarsettipalli.com";
-
-
-mail($email_to, $email_subject, $email_message); 
-
-header("Location: index.html");
-
-        exit;
-//echo "Thank you for contacting me. I will be in touch with you very soon.";
 ?>
-
