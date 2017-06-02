@@ -437,6 +437,9 @@ a.personi-btn:focus {
     .about-img img {
         margin-top: 5px;
     }
+    .service-content {
+        margin-top: 50px !important;
+    }
 }
 @media only screen and (max-width: 767px){
     .about-content-right {
@@ -449,6 +452,9 @@ a.personi-btn:focus {
     }
     .about-img img {
         margin-top: 5px;
+    }
+    .service-content {
+        margin-top: 50px !important;
     }
 }
 
