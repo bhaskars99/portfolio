@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "name": "bhaskar",
+      "password": "123456"
+    },{
+      "name": "radhe",
+      "password": "123456"
+    },{
+      "name": "test",
+      "password": "123456"
+    },{
+      "name": "seven11",
+      "password": "123456"
+    }   
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
